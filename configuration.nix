@@ -31,6 +31,8 @@
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
+  programs.ssh.startAgent = true;
+
   programs.zsh = {
     enable = true;
     enableCompletion = true;
