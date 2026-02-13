@@ -6,13 +6,13 @@
   };
 
   outputs =
-  { self, nixpkgs, ... }@inputs:
-  {
-    nixosConfigurations."gorgonzola" = nixpkgs.lib.nixosSystem {
-      specialArgs = { inherit inputs; };
-      modules = [
-        ./configuration.nix
-      ];
+    { self, nixpkgs, ... }@inputs:
+    {
+      nixosConfigurations."gorgonzola" = nixpkgs.lib.nixosSystem {
+        specialArgs = { inherit inputs; };
+        modules = [
+          ./configuration.nix
+        ];
+      };
     };
-  };
 }

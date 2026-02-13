@@ -1,4 +1,11 @@
-{ config, modulesPath, pkgs, ... }: {
+{
+  config,
+  modulesPath,
+  pkgs,
+  ...
+}:
+{
+
   imports = [ "${modulesPath}/virtualisation/amazon-image.nix" ];
   ec2.efi = true;
 
@@ -6,7 +13,7 @@
     enable = true;
     wheelNeedsPassword = false;
   }; # security.sudo
-  
+
   system.stateVersion = "25.11";
 
   environment.shells = with pkgs; [ zsh ]; # environment.shells
@@ -31,7 +38,10 @@
 
   networking.hostName = "gorgonzola";
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 
   nixpkgs.hostPlatform = "aarch64-linux";
 
@@ -41,19 +51,22 @@
     enable = true;
     enableCompletion = true;
     shellAliases = {
-      grep="grep -i --color=auto";
-      ls="ls --color=auto";
-      tree="tree -C";
+      grep = "grep -i --color=auto";
+      ls = "ls --color=auto";
+      tree = "tree -C";
     }; # shellAliases
   }; # programs.zsh
-  
+
   users.defaultUserShell = pkgs.zsh;
   users.users.otto = {
     isNormalUser = true;
     description = "otto";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+    ];
     openssh.authorizedKeys.keys = [
-        "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIP98KVJtOlcRc3WhHQb8MaDPPGgQmnNPjquYIa2q+ygH otto-admin-ec2\n"
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIP98KVJtOlcRc3WhHQb8MaDPPGgQmnNPjquYIa2q+ygH otto-admin-ec2\n"
     ]; # openssh.authorizedKeys.keys
   }; # users.users.otto
 }
