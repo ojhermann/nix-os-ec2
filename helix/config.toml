@@ -1,0 +1,10 @@
+theme = "default"
+
+[editor]
+true-color = true
+
+[editor.lsp]
+display-inlay-hints = true
+
+[editor.file-picker]
+hidden = false
