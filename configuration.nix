@@ -19,6 +19,10 @@
     # # bash
     bash-language-server
     shfmt
+    # # nix
+    nil
+    nixd
+    nixfmt
   ]; # environment.systemPackages
   environment.variables = {
     EDITOR = "hx";
