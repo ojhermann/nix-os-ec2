@@ -1,0 +1,11 @@
+[init]
+	defaultBranch = main
+[pull]
+	ff = only
+[push]
+	autoSetupRemote = true
+[safe]
+	directory = /home/otto/nixos
+[user]
+	email = ojhermann@gmail.com
+	name = Otto Hermann
