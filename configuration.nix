@@ -29,7 +29,11 @@
     VISUAL = "hx";
   }; # environment.variables
 
+  networking.hostName = "gorgonzola";
+
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
+  nixpkgs.hostPlatform = "aarch64-linux";
 
   programs.ssh.startAgent = true;
 
