@@ -15,6 +15,10 @@
     helix
     tree
     zsh
+    # helix
+    # # bash
+    bash-language-server
+    shfmt
   ]; # environment.systemPackages
   environment.variables = {
     EDITOR = "hx";
