@@ -22,6 +22,7 @@
     shellAliases = {
       grep = "grep -i --color=auto";
       ls = "ls --color=auto";
+      switch = "sudo nixos-rebuild switch";
       tree = "tree -C";
     }; # shellAliases
   }; # programs.zsh
