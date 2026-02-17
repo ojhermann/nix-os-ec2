@@ -68,5 +68,6 @@
     openssh.authorizedKeys.keys = [
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIP98KVJtOlcRc3WhHQb8MaDPPGgQmnNPjquYIa2q+ygH otto-admin-ec2\n"
     ]; # openssh.authorizedKeys.keys
+    shell = pkgs.zsh;
   }; # users.users.otto
 }

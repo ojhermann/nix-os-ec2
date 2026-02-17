@@ -8,6 +8,7 @@ let
   importAllNixFiles =
     path:
     let
+      # nixFiles
       files = lib.filesystem.listFilesRecursive path;
       nixFiles = lib.lists.filter (file: lib.hasSuffix ".nix" file) files;
     in
