@@ -39,6 +39,7 @@ in
     };
 
     shellAliases = {
+      dev-sum = "git status && tree";
       grep = "grep -i --color=auto";
       ls = "ls --color=auto";
       switch = "sudo nixos-rebuild switch";
