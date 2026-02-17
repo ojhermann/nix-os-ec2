@@ -11,8 +11,6 @@ let
       # nixFiles
       files = lib.filesystem.listFilesRecursive path;
       nixFiles = lib.lists.filter (file: lib.hasSuffix ".nix" file) files;
-      # scriptBins
-
     in
     lib.lists.map import nixFiles;
 in
