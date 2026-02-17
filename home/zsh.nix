@@ -1,8 +1,27 @@
-{ pkgs, ... }:
+{ lib, pkgs, ... }:
+let
+  scriptsDir = ./scripts;
+  scriptFiles = builtins.readDir scriptsDir;
+  createScriptBin =
+    name: type:
+    let
+      scriptContent = builtins.readFile (scriptsDir + "/${name}");
+      binName = lib.strings.removeSuffix ".sh" name;
+    in
+    if type == "regular" && lib.strings.hasSuffix ".sh" name then
+      pkgs.writeShellScriptBin binName scriptContent
+    else
+      null;
+  scriptBins = lib.concatMap (
+    n:
+    let
+      bin = createScriptBin n scriptFiles.${n};
+    in
+    if bin == null then [ ] else [ bin ]
+  ) (builtins.attrNames scriptFiles);
+in
 {
-  home.packages = [
-    pkgs.zsh
-  ]; # home.packages
+  home.packages = [ pkgs.zsh ] ++ scriptBins; # home.packages
 
   programs.zsh = {
     enable = true;
