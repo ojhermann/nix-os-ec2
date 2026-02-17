@@ -39,7 +39,6 @@ in
     };
 
     shellAliases = {
-      gdmb = "git branch --merged | grep -Ev '(^\*|^\+|main)' | xargs --no-run-if-empty git branch -d";
       grep = "grep -i --color=auto";
       gst = "git status && tree";
       ls = "ls --color=auto";
