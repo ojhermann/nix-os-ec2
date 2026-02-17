@@ -44,6 +44,7 @@ in
       ls = "ls --color=auto";
       switch = "sudo nixos-rebuild switch";
       tree = "tree -C";
+      zj = "zellij";
     }; # shellAliases
   }; # programs.zsh
 }
