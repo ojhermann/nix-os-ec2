@@ -19,4 +19,5 @@ in
   home.username = "otto";
   home.stateVersion = "25.11";
   imports = importAllNixFiles ./home;
+  nixpkgs.config.allowUnfree = true;
 }
