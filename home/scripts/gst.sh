@@ -8,5 +8,4 @@ show() {
 	fi
 }
 
-clear
 show
