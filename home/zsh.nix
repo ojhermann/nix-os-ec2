@@ -43,7 +43,7 @@ in
       gst = "git status && tree";
       ls = "ls --color=auto";
       switch = "sudo nixos-rebuild switch";
-      tree = "tree -C";
+      tree = "tree -aC -I '.git' --gitignore";
       zj = "zellij";
     }; # shellAliases
   }; # programs.zsh
