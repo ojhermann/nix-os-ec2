@@ -5,6 +5,8 @@
     # bash
     pkgs.bash-language-server
     pkgs.shfmt
+    # kdl
+    pkgs.kdlfmt
     # nix
     pkgs.nil
     pkgs.nixd
@@ -30,6 +32,14 @@
             command = "shfmt";
           };
         } # bash
+        {
+          name = "kdl";
+          auto-format = true;
+          formatter = {
+            command = "kdlfmt";
+            args = [ "format" ];
+          };
+        } # kdl
         {
           name = "nix";
           auto-format = true;
