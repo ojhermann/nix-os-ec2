@@ -40,10 +40,8 @@ in
 
     shellAliases = {
       grep = "grep -i --color=auto";
-      gst = "git status -sb && tree";
       ls = "ls --color=auto";
       switch = "sudo nixos-rebuild switch";
-      tree = "tree -aC -I '.git' --gitignore";
       zj = "zellij";
     }; # shellAliases
   }; # programs.zsh
