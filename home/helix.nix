@@ -7,6 +7,10 @@
     pkgs.shfmt
     # kdl
     pkgs.kdlfmt
+    # markdown
+    pkgs.markdown-oxide
+    pkgs.marksman
+    pkgs.prettier
     # nix
     pkgs.nil
     pkgs.nixd
@@ -40,6 +44,17 @@
             args = [ "format" ];
           };
         } # kdl
+        {
+          name = "markdown";
+          auto-format = true;
+          formatter = {
+            command = "prettier";
+            args = [
+              "--parser"
+              "markdown"
+            ];
+          };
+        }
         {
           name = "nix";
           auto-format = true;
