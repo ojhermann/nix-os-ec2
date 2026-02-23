@@ -6,5 +6,5 @@
 
   programs.claude-code = {
     enable = true;
-  }; # clausde-code
+  }; # claude-code
 }
