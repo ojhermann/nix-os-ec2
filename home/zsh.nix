@@ -21,7 +21,11 @@ let
   ) (builtins.attrNames scriptFiles);
 in
 {
-  home.packages = [ pkgs.zsh ] ++ scriptBins; # home.packages
+  home.packages = [
+    pkgs.socat # for web forwarding
+    pkgs.zsh
+  ]
+  ++ scriptBins; # home.packages
 
   programs.zsh = {
     enable = true;
@@ -34,6 +38,7 @@ in
     ''; # initContent
 
     sessionVariables = {
+      BROWSER = "open-browser";
       EDITOR = "hx";
       VISUAL = "hx";
     };
