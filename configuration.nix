@@ -21,6 +21,7 @@
     git
     helix
     tree
+    typos
     zsh
     # helix
     # # bash
