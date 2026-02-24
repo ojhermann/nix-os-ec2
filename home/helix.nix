@@ -41,7 +41,10 @@
           auto-format = true;
           formatter = {
             command = "kdlfmt";
-            args = [ "format" ];
+            args = [
+              "format"
+              "--stdin"
+            ];
           };
         } # kdl
         {
