@@ -39,6 +39,12 @@
 
   networking.hostName = "gorgonzola";
 
+  nix.gc = {
+    automatic = true;
+    persistent = true;
+    dates = "*-*-* 00:00:00";
+  };
+
   nix.settings.experimental-features = [
     "nix-command"
     "flakes"
